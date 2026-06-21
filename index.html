@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkySpotter Alert</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+    <button id="themeToggle" onclick="toggleTheme()">
+        🌙 Dark Mode
+    </button>
+
+    <div class="hero">
+        <h1>✈️ SkySpotter Alert</h1>
+        <p>Never miss an aircraft passing near your location.</p>
+    </div>
+
+    <div class="form">
+
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id="location" placeholder="Enter your location">
+
+        <button onclick="getLocation()" class="location-btn">
+            📍 Use My Location
+        </button>
+
+        <button onclick="startMonitoring()">
+            Start Monitoring
+        </button>
+
+    </div>
+
+    <div id="welcome"></div>
+
+    <div class="radar">
+        <div class="radar-circle">
+            <div class="radar-line"></div>
+        </div>
+        <p>📡 Scanning Airspace...</p>
+    </div>
+
+    <div class="stats-card">
+        <h2>📊 Statistics</h2>
+        <p>Aircraft Detected: <span id="detectedCount">0</span></p>
+        <p>Aircraft Passed: <span id="passedCount">0</span></p>
+        <p>Currently Tracking: <span id="trackingCount">0</span></p>
+    </div>
+
+    <div id="aircraftCard" class="card hidden">
+
+        <div class="card-header">
+            <h2>✈️ Nearby Aircraft</h2>
+            <span class="status" id="status">🟢 Approaching</span>
+        </div>
+
+        <p><strong>Flight:</strong> <span id="flight"></span></p>
+        <p><strong>Airline:</strong> <span id="airline"></span></p>
+        <p><strong>Aircraft:</strong> <span id="aircraft"></span></p>
+        <p><strong>Route:</strong> <span id="route"></span></p>
+        <p><strong>Direction:</strong> <span id="direction"></span></p>
+        <p><strong>Altitude:</strong> <span id="altitude"></span></p>
+        <p><strong>Distance:</strong> <span id="distance"></span></p>
+        <p><strong>ETA:</strong> <span id="eta">4:00</span></p>
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+    </div>
+
+    <div class="history">
+        <h2>📋 Alert History</h2>
+        <ul id="historyList"></ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
